@@ -3,3 +3,5 @@
 /bower_components
 .env
 cmds.bat
+.idea
+_ide_helper.php
