@@ -8,11 +8,12 @@
 <div class="col-sm-8 blog-main">
 	<div class="blog-post">
 		<h2 class="blog-post-title">{{ $article->title }}</h2>
-		<div class="blog-post-meta">posted in <a href="/categories/{{ $article->category->slug }}">{{ $article->category->name }}</a> and tagged
+		<div class="blog-post-meta">{{trans('blog.post.in')}}: <a href="/categories/{{ $article->category->slug }}">{{ $article->category->name }}</a>
+        {{trans('blog.post.tags')}}
 		@foreach($article->tags as $key => $tag)
 			<a href="/tags/{{ $tag->slug }}">{{ $tag->name }}</a>
 		@endforeach
-		about {{ $article->created_at->diffForHumans() }}.</div>
+		{{ $article->created_at->diffForHumans() }}.</div>
 		{!! $article->body_html !!}
 		@unless(is_null($article->original) || empty($article->original))
 			<p>original:<br>{{ $article->original }}</p>

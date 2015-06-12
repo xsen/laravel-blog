@@ -7,7 +7,7 @@
 	@foreach($articles as $article)
 		<div class="blog-post">
 			<h2 class="blog-post-title"><a href="/{{ $article->slug }}">{{ $article->title }}</a></h2>
-			<div class="blog-post-meta">posted in <a href="/categories/{{ $article->category->slug }}">{{ $article->category->name }}</a> and tagged
+			<div class="blog-post-meta">{{trans('blog.post.in')}}: <a href="/categories/{{ $article->category->slug }}">{{ $article->category->name }}</a> {{trans('blog.post.tags')}}:
 			@foreach($article->tags as $key => $tag)
 				<a href="/tags/{{ $tag->slug }}">{{ $tag->name }}</a>
 			@endforeach
@@ -18,7 +18,7 @@
 	@endforeach
 
 
-	<a class="btn btn-primary pull-right" href="/articles/?page=2">More Articles</a>
+	<a class="btn btn-primary pull-right" href="/articles/?page=2">{{trans('blog.more_articles')}}</a>
 
 </div><!-- /.blog-main -->
 @stop

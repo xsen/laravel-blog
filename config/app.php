@@ -153,6 +153,7 @@ return [
 		'GrahamCampbell\HTMLMin\HTMLMinServiceProvider',
 		'Roumen\Sitemap\SitemapServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
 
 	],
 
@@ -207,6 +208,8 @@ return [
 		'Flash' => 'Laracasts\Flash\Flash',
 		'Debugbar' => 'Barryvdh\Debugbar\Facade',
 		'HTMLMin' => 'GrahamCampbell\HTMLMin\Facades\HTMLMin',
+        'LocalizedCarbon'   => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
+        'DiffFormatter'     => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
 
 	],
 

@@ -3,6 +3,7 @@
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
+use Laravelrus\LocalizedCarbon\LocalizedCarbon;
 
 /**
  * App\Article
@@ -16,6 +17,7 @@ use Carbon\Carbon;
  * @property-write mixed $slug 
  * @method static \Illuminate\Database\Query\Builder|\App\Article findBySlug($slug)
  */
+
 class Article extends Model
 {
     use SoftDeletes;
@@ -51,6 +53,12 @@ class Article extends Model
         $Parsedown = new \Parsedown();
 
         return $Parsedown->text($this->body);
+    }
+
+
+    public function getCreatedAtAttribute($value)
+    {
+        return LocalizedCarbon::parse($value);
     }
 
     public function setCreatedAtAttribute($date)
