@@ -2,6 +2,14 @@
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Category
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Article[] $articles 
+ * @property-write mixed $slug 
+ * @method static \Illuminate\Database\Query\Builder|\App\Category getTopLevel()
+ * @method static \Illuminate\Database\Query\Builder|\App\Category findBySlug($slug)
+ */
 class Category extends Model
 {
     protected $fillable = ['name', 'slug', 'parent_id'];

@@ -7,7 +7,7 @@ class CategoriesTableSeeder extends Seeder
 {
     public function run()
     {
-        $faker = Faker::create('zh_CN');
+        $faker = Faker::create();
 
         \App\Category::create([
             'name' => $faker->word,

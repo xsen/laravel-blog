@@ -7,7 +7,7 @@ class ArticlesTableSeeder extends Seeder
 {
     public function run()
     {
-        $faker = Faker::create('zh_CN');
+        $faker = Faker::create();
 
         $userIds = \App\User::lists('id');
         $tagIds = \App\Tag::lists('id');

@@ -7,7 +7,7 @@ class TagsTableSeeder extends Seeder
 {
     public function run()
     {
-        $faker = Faker::create('zh_CN');
+        $faker = Faker::create();
 
         foreach (range(1, 20) as $index) {
             \App\Tag::create([

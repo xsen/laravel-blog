@@ -2,6 +2,13 @@
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Tag
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Article[] $articles 
+ * @property-write mixed $slug 
+ * @method static \Illuminate\Database\Query\Builder|\App\Tag findBySlug($slug)
+ */
 class Tag extends Model
 {
     protected $fillable = ['name', 'slug'];

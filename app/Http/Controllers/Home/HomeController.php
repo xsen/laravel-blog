@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use Faker\Factory as Faker;
 
 class HomeController extends Controller
 {

@@ -4,6 +4,18 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
 
+/**
+ * App\Article
+ *
+ * @property-read \App\User $user 
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Tag[] $tags 
+ * @property-read \App\Category $category 
+ * @property-read mixed $tag_list 
+ * @property-read mixed $body_html 
+ * @property-write mixed $created_at 
+ * @property-write mixed $slug 
+ * @method static \Illuminate\Database\Query\Builder|\App\Article findBySlug($slug)
+ */
 class Article extends Model
 {
     use SoftDeletes;
