@@ -49,7 +49,7 @@
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite">
-					每页{{ $articles->count() }}条,共{{ $articles->lastPage() }}页,总{{ $articles->total() }}条.
+					 {{ $articles->count() }} {{ $articles->lastPage() }} {{ $articles->total() }} .
 				</div>
 			</div>
 			<div class="col-sm-6">

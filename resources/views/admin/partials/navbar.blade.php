@@ -5,7 +5,7 @@
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 	</button>
-	<a class="navbar-brand" href="/" target="_blank">90Door Admin Dashboard</a>
+	<a class="navbar-brand" href="/" target="_blank">Admin Dashboard</a>
 </div>
 <!-- /.navbar-header -->
 

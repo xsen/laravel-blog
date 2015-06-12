@@ -48,7 +48,7 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-9 pull-left">
-				每页{{ $articles->count() }}条,共{{ $articles->lastPage() }}页,总{{ $articles->total() }}条.
+				{{ $articles->count() }} {{ $articles->lastPage() }} {{ $articles->total() }}.
 			</div>
 			<div class="col-sm-3 page">
 				{!! $articles->render() !!}
