@@ -13,17 +13,18 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
 	
-	//mix.sass('app.scss', 'resources/assets/css');
-	
 	mix.styles([
 		'bootstrap.min.css',
-		'highlight-default.css',
-		'home.css'
+		'clean-blog.min.css',
+		'highlight-default.css'
 	]);
+
+
 
 	mix.scripts([
 		'jquery.min.js',
 		'bootstrap.min.js',
+		'clean-blog.min.js',
 		'highlight.js'
 	])
 

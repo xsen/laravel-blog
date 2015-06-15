@@ -24,16 +24,17 @@ class TagsController extends Controller
      */
     public function show($slug)
     {
-        //$articles = Tag::findBySlug($slug)->articles()->latest('articles.created_at')->paginate(8);
-
         $page_size = setting('page_size');
 
         $tag = Tag::findBySlug($slug);
 
+        $title = 'Тег - '.$tag->name;
+        $description = " ";
+
         $articles = \App\Article::with('tags', 'category')->whereHas('tags', function ($query) use ($slug) {
             $query->whereSlug($slug);
-        })->latest()->paginate($page_size);
+        })->orderBy('id', 'desc')->simplePaginate($page_size);
 
-        return view('home.tags.show', compact('articles', 'tag'));
+        return view('home.articles.index', compact('articles', 'title', 'description'));
     }
 }

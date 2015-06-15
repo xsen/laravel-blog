@@ -23,10 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $page_size = setting('page_size');
+        $articlesController = new ArticlesController();
+        return $articlesController->index();
+    }
 
-        $articles = \App\Article::with('tags', 'category')->latest()->take($page_size)->get();
+    public function about()
+    {
 
-        return view('home.index', compact('articles'));
     }
 }

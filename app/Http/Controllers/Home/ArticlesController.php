@@ -14,7 +14,7 @@ class ArticlesController extends Controller
     {
         $page_size = setting('page_size');
 
-        $articles = Article::with('tags', 'category')->latest()->paginate($page_size);
+        $articles = Article::with('tags', 'category')->orderBy('id', 'desc')->simplePaginate($page_size);
 
         return view('home.articles.index', compact('articles'));
     }

@@ -4,25 +4,19 @@
 
 @section('description'){{ setting('site_name').' | '.description_trim($article->body_html) }}@stop
 
+@section('header')
+    {!! view('home.header.article', ['article' => $article]) !!}
+@stop
+
 @section('content')
-<div class="col-sm-8 blog-main">
-	<div class="blog-post">
-		<h2 class="blog-post-title">{{ $article->title }}</h2>
-		<div class="blog-post-meta">{{trans('blog.post.in')}}: <a href="/categories/{{ $article->category->slug }}">{{ $article->category->name }}</a>
-        {{trans('blog.post.tags')}}
-		@foreach($article->tags as $key => $tag)
-			<a href="/tags/{{ $tag->slug }}">{{ $tag->name }}</a>
-		@endforeach
-		{{ $article->created_at->diffForHumans() }}.</div>
-		{!! $article->body_html !!}
-		@unless(is_null($article->original) || empty($article->original))
-			<p>original:<br>{{ $article->original }}</p>
-		@endunless
-		<p>link:<br>{{ setting('site_url').$article->slug }}</p>
-	</div><!-- /.blog-post -->
-	<hr>
-
-	<div class="ds-thread" data-thread-key="{{ $article->slug }}" data-title="{{ $article->title }}" data-url="{{ setting('site_url').$article->slug }}"></div>
-
-</div><!-- /.blog-main -->
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    {!! $article->body_html !!}
+                </div>
+            </div>
+        </div>
+    </article>
 @stop

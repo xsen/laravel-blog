@@ -48,30 +48,13 @@ Route::get('login', 'Admin\AuthController@getLogin');
 Route::post('login', 'Admin\AuthController@postLogin');
 Route::get('logout', 'Admin\AuthController@logout');
 
-/*Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);
-*/
-
-Route::get('foo', function () {
-    \Cache::flush();
-
-    return 'ok';
-});
-
-Route::get('bar', function () {
-
-    return view('aaa');
-
-});
-
 /*
  * home
  */
 Route::group(['namespace' => 'Home'], function () {
 
     Route::resource('/', 'HomeController@index');
+    Route::get('/about', 'HomeController@about');
 
     Route::get('tags', 'TagsController@index');
     Route::get('tags/{slug}', 'TagsController@show');

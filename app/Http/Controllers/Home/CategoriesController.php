@@ -24,15 +24,15 @@ class CategoriesController extends Controller
      */
     public function show($slug)
     {
-        //$articles = Category::findBySlug($slug)->articles()->latest()->paginate(8);
+        $category = Category::findBySlug($slug);
         $page_size = setting('page_size');
 
-        $category = Category::findBySlug($slug);
-
+        $title = 'Категория - '.$category->name;
+        $description = " ";
         $articles = \App\Article::with('tags', 'category')->whereHas('category', function ($query) use ($slug) {
             $query->whereSlug($slug);
-        })->latest()->paginate($page_size);
+        })->orderBy('id', 'desc')->simplePaginate($page_size);
 
-        return view('home.categories.show', compact('articles', 'category'));
+        return view('home.articles.index', compact('articles', 'title', 'description'));
     }
 }

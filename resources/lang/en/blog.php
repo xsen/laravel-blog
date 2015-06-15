@@ -7,14 +7,14 @@ return [
     'more_articles' => 'More Articles',
 
     'sidebar' => [
-        'blog' => 'Блог',
+        'blog' => 'Blog',
         'articles' => 'Articles',
         'about' => 'About',
     ],
 
     'post' => [
-        'in' => 'Категории',
-        'tags' => 'Теги',
+        'in' => 'Category',
+        'tags' => 'Tags',
     ]
 
 
