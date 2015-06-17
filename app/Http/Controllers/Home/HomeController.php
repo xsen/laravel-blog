@@ -29,6 +29,9 @@ class HomeController extends Controller
 
     public function about()
     {
+        $title = 'Обо мне';
+        $description = "Много работаю";
 
+        return view('home.about', compact('title', 'description'));
     }
 }
