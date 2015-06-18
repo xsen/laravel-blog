@@ -50,7 +50,7 @@ class SettingsTableSeeder extends Seeder
         ]);
 
         Setting::create([
-            'name' => 'tong_ji',
+            'name' => 'statistic_code',
             'value' => '',
             'description' => 'statistic',
             'type' => 'text',

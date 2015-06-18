@@ -13,7 +13,7 @@ class CreateSettingsTable extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('value')->nullable();
+            $table->text('value')->nullable();
             $table->string('description')->nullable();
             $table->enum('type', ['text', 'textarea', 'select', 'checkbox', 'radio'])->default('text');
             $table->timestamps();
