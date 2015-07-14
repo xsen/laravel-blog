@@ -1,6 +1,6 @@
 <div class="form-group">
 	{!! Form::label('title', 'Title:') !!}
-	{!! Form::text('title', null, ['class' => 'form-control', 'autofocus' => 'autofocus']) !!}
+	{!! Form::text('title', null, ['id' => 'theme', 'class' => 'form-control', 'autofocus' => 'autofocus']) !!}
 </div>
 
 <div class="form-group">
@@ -72,6 +72,15 @@
 	<!-- select2 -->
 	<script src="/admin-assets/js/select2.min.js"></script>
 	<script>
+
+		var theme = $('#theme');
+		theme.val(cookies.get('theme'));
+		theme.on('change',function() {
+			var value = $(this).val();
+			cookies.set("theme", value);
+		});
+
+		$('#editor').text(cookies.get('editor'));
 		var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
 			mode: 'markdown',
 			lineNumbers: true,
@@ -79,16 +88,28 @@
 			theme: "default",
 			extraKeys: {"Enter": "newlineAndIndentContinueMarkdownList"}
 		});
+
+		editor.on('change', function() {
+			cookies.set("editor", editor.getValue());
+		});
+
 		$('#tag_list').select2({
 			placeholder: 'Choose a tag',
 			tags: true
 		});
+
 		$('#category_id').select2();
 		$(function() {
 			$('textarea').inlineattachment({
 				uploadUrl: '/admin/uploadImage',
 				extraParams:{"_token":"{{ csrf_token() }}"}
 			});
+		});
+
+		$('input[type=submit]').on('click', function(){
+			cookies.set("editor", "");
+			cookies.set("theme", "");
+			return true;
 		});
 	</script>
 @stop

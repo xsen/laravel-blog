@@ -9,3 +9,4 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="/admin-assets/js/sb-admin-2.js"></script>
+<script src="/admin-assets/js/cookie.js"></script>
