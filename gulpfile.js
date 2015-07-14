@@ -16,7 +16,7 @@ elixir(function(mix) {
 	mix.styles([
 		'bootstrap.min.css',
 		'clean-blog.min.css',
-		'highlight-default.css'
+		'prism.css'
 	]);
 
 
@@ -25,7 +25,7 @@ elixir(function(mix) {
 		'jquery.min.js',
 		'bootstrap.min.js',
 		'clean-blog.min.js',
-		'highlight.js'
+		'prism.js'
 	])
 
 	mix.version(['css/all.css', 'js/all.js']);

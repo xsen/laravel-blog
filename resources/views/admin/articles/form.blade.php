@@ -74,13 +74,22 @@
 	<script>
 
 		var theme = $('#theme');
-		theme.val(cookies.get('theme'));
+
+		if ( cookies.get('theme') )
+		{
+			theme.val(cookies.get('theme'));
+		}
+
 		theme.on('change',function() {
 			var value = $(this).val();
 			cookies.set("theme", value);
 		});
 
-		$('#editor').text(cookies.get('editor'));
+		if ( cookies.get('editor') )
+		{
+			$('#editor').text(cookies.get('editor'));
+		}
+
 		var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
 			mode: 'markdown',
 			lineNumbers: true,
@@ -107,8 +116,8 @@
 		});
 
 		$('input[type=submit]').on('click', function(){
-			cookies.set("editor", "");
-			cookies.set("theme", "");
+			cookies.set("editor", null);
+			cookies.set("theme", null);
 			return true;
 		});
 	</script>
